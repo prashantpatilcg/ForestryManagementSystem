@@ -8,6 +8,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.fms.dto.Users;
 import com.fms.service.ForestryManagementService;
+import com.fms.validation.Form;
 
 @Controller
 public class CreateUserMVC {
@@ -31,10 +33,14 @@ public class CreateUserMVC {
 
 }      
 	@RequestMapping(value="/createusermvc1", method=RequestMethod.GET)
-	public ModelAndView createProfile(ModelAndView modelview)
+	public String createProfile(Model model)
 	{
-		modelview.setViewName("createuser");
-		return modelview;
+			Users user = new Users();	       
+			model.addAttribute("form1", user);
+	        return "form1";
+		/*
+		 * modelview.setViewName("form"); return modelview;
+		 */
 
 } 
 	@RequestMapping(value="/createusermvc2", method=RequestMethod.GET)
@@ -54,10 +60,10 @@ public class CreateUserMVC {
 	
 	
 	@RequestMapping(value="/createuser", method=RequestMethod.POST)
-	public String doApplicationUpdate(@Valid @ModelAttribute("user") Users user, BindingResult result ) throws ServletException, IOException {
+	public String doApplicationUpdate(@Valid @ModelAttribute("form1") Users user, BindingResult result ) throws ServletException, IOException {
 		{
 		  if(result.hasErrors()) {
-			  return "createuser";
+			  return "form1";
 		  }
 		 
 		

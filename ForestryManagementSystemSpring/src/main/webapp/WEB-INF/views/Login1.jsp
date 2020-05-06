@@ -7,17 +7,22 @@
 <body>
     <h2>Fill your form!</h2>
  
-    <form:form method="POST" commandName="form"  >
+    <form:form name=addcustomer method=post action="./createuser"  commandName="Login1"  >
         <table>
             <tr>
                 <td>Enter your name:</td>
-                <td><form:input path="name" /></td>
-                <td><form:errors path="name" cssStyle="color: #ff0000;"/></td>
+                <td><form:input path="username" /></td>
+                <td><form:errors path="username" cssStyle="color: #ff0000;"/></td>
             </tr>
             <tr>
-                <td>Enter your lastname:</td>
-                <td><form:input path="lastname" /></td>
-                <td><form:errors path="lastname" cssStyle="color: #ff0000;" /></td>
+                <td>Enter your address:</td>
+                <td><form:input path="address" /></td>
+                <td><form:errors path="address" cssStyle="color: #ff0000;" /></td>
+            </tr>
+            <tr>
+                <td>Enter your email id:</td>
+                <td><form:input path="emailid" /></td>
+                <td><form:errors path="emailid" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>
                 <td>Enter your password:</td>
@@ -25,19 +30,18 @@
                 <td><form:errors path="password" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>
-                <td>Enter your zip:</td>
-                <td><form:input path="zip" /></td>
-                <td><form:errors path="zip" cssStyle="color: #ff0000;" /></td>
+                <td>Enter your cpassword:</td>
+                <td><form:input path="cpassword" /></td>
+                <td><form:errors path="cpassword" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>
-                <td>Enter your email:</td>
-                <td><form:input path="email" /></td>
-                <td><form:errors path="email" cssStyle="color: #ff0000;" /></td>
+                <td>Enter your contact no:</td>
+                <td><form:input path="contactno" /></td>
+                <td><form:errors path="contactno" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>
-                <td>Enter your age:</td>
-                <td><form:input path="age" /></td>
-                <td><form:errors path="age" cssStyle="color: #ff0000;" /></td>
+            	<td>Role: *<br></td>
+          		<td> <input type="radio" name="role" value="Customer"  > New User</label></td>
             </tr>
             <tr>
                 <td><input type="submit" name="submit" value="Submit"></td>
@@ -45,6 +49,7 @@
             <tr>
         </table>
     </form:form>
+    
  
 </body>
 </html>

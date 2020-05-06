@@ -1,5 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -217,7 +219,7 @@ if (window.pageYOffset > sticky) {
 
 
 <div class="container">  
-  <form class="form-container" name=addcustomer method=post action="./createuser" onsubmit="return validate()" >  
+  <form:form class="form-container" name=adduser method="POST" action="./createuser" onsubmit="return validate()" commandName="createuser">  
   <h3>User Details</h3>  
  
     
@@ -258,7 +260,7 @@ if (window.pageYOffset > sticky) {
      <center>
     <button type="submit" class="btn btn-primary">Create Profile</button>
     </center>  
-  </form>  
+  </form:form>  
 </div>  
 
 </body>

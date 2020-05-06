@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Range;
+
 @Entity
 @Table(name="users")
 public class Users {
@@ -16,7 +18,7 @@ public class Users {
 	@Column(name="userid")
 	private   int userid;
 	@Column(name="username")
-  //  @Size(min=5,message="at least 5 chars")  
+	@Size(min=5, max=10, message="Your name should be between 5 - 10 characters.")	
 	private   String username;
 	@Column(name="address")
 	private   String address;
@@ -25,6 +27,7 @@ public class Users {
 	@Column(name="password")
 	private   String password;
 	@Column(name="contactno")
+    @Range(min=600000, message="Invalid mobile nos")
 	private   String contactno;
 	@Column(name=" role")
 	private String role;

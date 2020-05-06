@@ -1,7 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,47 +28,7 @@ function validate()
         return false; 
     }
    
-/*     if (username.value == "")                                  
-    { 
-        window.alert("Please enter your name."); 
-        username.focus(); 
-        return false; 
-    } 
-   
-    if (address.value == "")                               
-    { 
-        window.alert("Please enter your address."); 
-        address.focus(); 
-        return false; 
-    } 
-       
-    if (emailid.value == "")                                   
-    { 
-        window.alert("Please enter a valid e-mail address."); 
-        emailid.focus(); 
-        return false; 
-    } 
-   
-    if (password.value == "")                           
-    { 
-        window.alert("Please enter your Password"); 
-        password.focus(); 
-        return false; 
-    } 
-   
-    if (contactno.value == "")                        
-    { 
-        window.alert("Please enter your contact no"); 
-        contactno.focus(); 
-        return false; 
-    } 
-   
-    if (role.selectedIndex < 1)                  
-    { 
-        alert("Please enter your course."); 
-        role.focus(); 
-        return false; 
-    } */ 
+
    
     return true; 
 }</script> 
@@ -214,10 +172,6 @@ if (window.pageYOffset > sticky) {
     </div>
 </nav>
      
-
-
-
-
 <div class="container">  
   <form:form class="form-container" name=adduser method="POST" action="./createuser" onsubmit="return validate()" commandName="createuser">  
   <h3>User Details</h3>  
@@ -251,7 +205,6 @@ if (window.pageYOffset > sticky) {
       <input type="number"  class="form-control" name=contactno  placeholder="Contact No" required maxlength="12" pattern="[6-9]{1}[0-9{9}]" title="invalid mobile number">  
     </div>
     
-     
        <div class="form-group"  >
           <label for="address">Role: *<br>
            <input type="radio" name="role" value="Customer"  > New User</label>

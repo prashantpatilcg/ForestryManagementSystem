@@ -18,16 +18,18 @@ public class Users {
 	@Column(name="userid")
 	private   int userid;
 	@Column(name="username")
-	@Size(min=5, max=10, message="Your name should be between 5 - 10 characters.")	
+	@Size(min=4, message="Your name should have at least 4 characters.")	
 	private   String username;
 	@Column(name="address")
+	@Size(min=5, message="At least 5 characters.")	
 	private   String address;
 	@Column(name="emailid")
 	private   String emailid;
 	@Column(name="password")
 	private   String password;
 	@Column(name="contactno")
-    @Range(min=600000, message="Invalid mobile nos")
+	@Size(min=10, message="Invalid Mobile no")	
+    @Range(min=600000000, message="Invalid mobile no")
 	private   String contactno;
 	@Column(name=" role")
 	private String role;

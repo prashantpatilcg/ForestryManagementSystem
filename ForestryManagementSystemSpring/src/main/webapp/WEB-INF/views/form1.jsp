@@ -25,6 +25,20 @@ function validate()
    
     return true; 
 }</script> 
+<script type="text/javascript">
+	/*code: 48-57 Numbers
+	  8  - Backspace,
+	  35 - home key, 36 - End key
+	  37-40: Arrow keys, 46 - Delete key*/
+	function restrictAlphabets(e){
+		var x=e.which||e.keycode;
+		if((x>=48 && x<=57) || x==8 ||
+			(x>=35 && x<=40)|| x==46)
+			return true;
+		else
+			return false;
+	}
+</script>
 
 <style >
 <style type="text/css">
@@ -196,12 +210,12 @@ if (window.pageYOffset > sticky) {
  --%>            </tr> 
             <tr>
                 <td><label for="address">Phone No *</label></td>
-                <td><input type="number"  class="form-control" name=contactno  placeholder="Contact No" required maxlength="12" pattern="[6-9]{1}[0-9{9}]" title="invalid mobile number"></td>
+                <td><input type="text"  onkeypress='return restrictAlphabets(event)' class="form-control" name=contactno  placeholder="Contact No" required maxlength="12"  title="Invalid mobile number"></td>
                 <td><form:errors path="contactno" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>
                 <td><label for="address">Role: *</label></td>
-                <td><input type="radio" name="role" value="Customer"  ><label for="address"> New User </label></td>
+                <td><input type="radio" name="role" value="Customer"  required="required" ><label for="address"> New User </label></td>
                 <td><form:errors path="role" cssStyle="color: #ff0000;" /></td>
             </tr>
             <tr>

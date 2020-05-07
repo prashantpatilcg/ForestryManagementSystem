@@ -61,7 +61,7 @@ public class CreateUserMVC {
 	
 	@RequestMapping(value="/createuser", method=RequestMethod.POST)
 	public String doApplicationUpdate(@Valid @ModelAttribute("form1") Users user, BindingResult result ) throws ServletException, IOException {
-		{
+		
 		  if(result.hasErrors()) {
 			  return "form1";
 		  }
@@ -77,7 +77,7 @@ public class CreateUserMVC {
 			{
 				return "Fail";
 			}
-	}
+	
 }
 	
 	

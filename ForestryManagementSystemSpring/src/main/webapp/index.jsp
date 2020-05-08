@@ -7,16 +7,16 @@
   <meta charset="utf-8">  
   <meta name="viewport" content="width=device-width, initial-scale=1">  
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">  
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>  
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script> 
  <style >
- body{
-  background-image:url("./fs3.jpg");  
-  background-size:cover;
-  background-attachment:fixed; 
- 
- }
+image {
+ima
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
  p{
  text-align: center;
  }
@@ -32,13 +32,15 @@
 </head>
 <body>
 
-<style>
+
+
+<!-- <style>
 
 body {
   background-image: url('https://cdn.pixabay.com/photo/2017/08/16/16/10/stopwatch-2648253_960_720.jpg');
   background-repeat: no-repeat;
 }
-</style>
+</style> -->
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top" role="navigation">
     <div class="container">
@@ -87,10 +89,11 @@ body {
                 </li>
             </ul>
         </div>
+        
     </div>
 </nav>
 
-<div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!-- <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -109,7 +112,28 @@ body {
             </div>
         </div>
    </div>
-</div>
+</div> -->
 
+  <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2017/08/16/16/10/stopwatch-2648253_960_720.jpg" style="width:100%;height:620px">
+  <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704__340.jpg" style="width:100%;height: 620px">
+  <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2013/08/28/12/03/plumage-176723__340.jpg" style="width:100%;height: 620px">
+  <img class="mySlides w3-animate-fading" src="https://cdn.pixabay.com/photo/2016/03/02/07/21/abstract-1231863_960_720.jpg" style="width:100%;height: 620px">
+
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 9000);    
+}
+</script>
 </body>
 </html>
